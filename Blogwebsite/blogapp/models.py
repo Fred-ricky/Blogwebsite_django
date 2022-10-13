@@ -11,3 +11,7 @@ class Post(models.Model):
     slug = models.SlugField(max_length=255, blank=True, unique=True)
     author = models.ForeignKey(to=User, on_delete=models.CASCADE)
     status = models.IntegerField(choices=STATUS, default=0)
+
+
+    def __str__(self):
+        return self.title
